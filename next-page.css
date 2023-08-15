@@ -15,9 +15,9 @@ body {
 .box {
     color: white;
     background-color: rgba(0, 0, 0, 0.6);
-    max-width: 450px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 400px;
+    margin: 300px auto 0; /* Adjust the top margin (50px) as needed */
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
