@@ -15,8 +15,8 @@ body {
 .box {
     color: white;
     background-color: rgba(0, 0, 0, 0.6);
-    max-width: 390px;
-    margin: 295px auto 0; /* Adjust the top margin (50px) as needed */
+    max-width: 350px;
+    margin: 280px auto 0; /* Adjust the top margin (50px) as needed */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 15px;
