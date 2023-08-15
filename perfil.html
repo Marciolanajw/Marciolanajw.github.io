@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro de Atividades</title>
+    <!--Estilos-->
+    <link rel="stylesheet" href="next-page.css">
+    <link rel="stylesheet" href="next-page1.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+       
+    </style>
+
+   </head>
+   <body onload="">
+        <div class="box">
+            <form action="https://api.sheetmonkey.io/form/4uSSZS4oA8Y5FTE8SpHzF2" method="post">
+                <fieldset>
+                    <div class="inputBox">
+                        <b><p id="mes-atual"></p></b>
+                      </div>
+                      <legend><b>Fórmulário de Atividades</b></legend>
+
+                      <div><span id="Datadia"></span></div>
+
+                        <div id="profile">
+                            <div class="linha">
+                                <img id="profileImage" src="" alt="Imagem de Perfil" class="tamanho_imagem">
+                                <h2 id="profileName" class="margem"></h2>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="sumir">
+                            <label for="username">Nome de Usuário:</label>
+                            <!-- O campo de input está oculto para que o usuário não possa alterar o valor. -->
+                            <input type="text" id="Publicador" name="Publicador" class="Publicador">
+                        </div>
+
+                        <div class="mes-atual">
+                            <p>Mês: <span id="currentMonth"></span></p>
+                        </div>
+
+                        <div class="sumir">
+                            <label for="currentMonthInput">Mês Atual:</label>
+                            <!-- Campo de input para exibir o mês atual -->
+                            <input type="text" id="currentMonthInput" name="currentMonthInput" class="currentMonthInput">
+                        </div>
+                    
+                        <br><br>
+                 
+                        <div class="inputBox">     
+                            <input type="number" name="Publicações" id="publicacoes" class="inputUser" required>
+                            <label for="publicacoes" class="labelInput">Publicações</label>
+                        </div>
+
+                        <br><br>
+
+                        <div class="inputBox">
+                            <input type="number" name="Vídeos Mostrados" id="videosmostrados" class="inputUser" required>
+                            <label for="videosmostrados" class="labelInput">Vídeos Mostrados</label>
+                        </div>
+
+                        <br><br>
+
+                        <div class="inputBox">
+                            <input type="number" name="Horas" id="horas" class="inputUser" required>
+                            <label for="horas" class="labelInput">Horas</label>
+                        </div>
+
+                        <br><br>
+
+                        <div class="inputBox">
+                            <input type="number" name="Revisitas" id="revisitas" class="inputUser" required>
+                            <label for="revisitas" class="labelInput">Revisitas</label>
+                        </div>
+
+                        <br><br>
+
+                        <div class="inputBox">
+                            <input type="number" name="Estudos" id="estudos" class="inputUser" required>
+                            <label for="estudos" class="labelInput">Estudos</label>
+                        </div>
+                        
+                        <div class="sumir">
+                            <label for="observacoes">Observações:</label>
+                            <!-- Campo de input para as observações -->
+                            <input type="text" id="observacoesInput" name="observacoesInput" class="observacoesInput">
+                        </div>
+
+                        <br>
+                                <input class="margem_radius" type="radio" id="Pioneiro Auxiliar" name="Privilégio" value="Pioneiro Auxiliar">
+                                <label for="Pioneiro Auxiliar" id="Privilegio">Pioneiro Auxiliar</label>
+                                                <br><br>
+                                <input class="margem_radius" type="radio" id="Pioneiro Regular" name="Privilégio" value="Pioneiro Regular">
+                                <label for="pioneiro Regular" id="Privilegio">Pioneiro Regular</label>
+                                <br><br>
+                                <!---------------Botão------------------------>
+                                <input name="submit" id="submit" class="botao" type="submit">
+                </fieldset>
+            </form>
+        </div>
+            <script src="script_foto.js"></script>
+            <script src="login/login.js"></script>
+            <script src="script_mes.js"></script>
+            <script src="script_mes_completo.js"></script>
+             <script src="script-obs.js"></script>
+
+   </body>
+   </html>
+   
+   
