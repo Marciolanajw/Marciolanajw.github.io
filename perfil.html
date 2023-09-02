@@ -14,7 +14,7 @@
    </head>
    <body onload="">
         <div class="box">
-            <form action="https://api.sheetmonkey.io/form/4uSSZS4oA8Y5FTE8SpHzF2" method="post">
+            <form id="myForm" action="https://api.sheetmonkey.io/form/4uSSZS4oA8Y5FTE8SpHzF2" method="post">
                 <fieldset>
                     <div class="inputBox">
                         <b><p id="mes-atual"></p></b>
@@ -97,7 +97,24 @@
                 </fieldset>
             </form>
         </div>
+            <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                var form = document.getElementById("myForm");
+                        
+                                form.addEventListener("submit", function (event) {
+                                    // Impede o envio padrão do formulário
+                                    event.preventDefault();
+                        
+                                    // Aqui você pode realizar qualquer ação necessária antes de redirecionar, como enviar dados para o servidor
+                        
+                                    // Após concluir as ações necessárias, redirecione para a página de agradecimento
+                                    window.location.href = "agradecimento.html";
+                                });
+                            });
+            </script>
 
+
+       
             <script src="script_foto.js"></script>
             <script src="login/login.js"></script>
             <script src="script-obs.js"></script>
