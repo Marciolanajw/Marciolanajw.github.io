@@ -58,17 +58,17 @@
 
                         <br><br-->
 
+                        <input type="checkbox" id="pioneiroAuxiliar" onchange="alterarTipo()"> Pioneiro Auxiliar<br><br><br>
+
+                        <input type="checkbox" id="pioneiroRegular" onchange="alterarTipo()"> Pioneiro Regular
+                    
+                        <br><br><br><br><br>
+
                         <div class="inputBox">
-                            <input type="text" name="Horas" id="horas" class="inputUser" required>
+                            <input type="text" name="Horas" id="horas" class="inputUser" placeholder="Se você participou digite SIM">
                             <label for="horas" class="labelInput">Horas</label>
                         </div>
 
-                        <br><br>
-
-                        <div class="inputBox">
-                            <input type="number" name="Revisitas" id="revisitas" class="inputUser" required>
-                            <label for="revisitas" class="labelInput">Revisitas</label>
-                        </div>
 
                         <br><br>
 
@@ -85,12 +85,6 @@
 
                         <br>
 
-                                                
-                                <input class="margem_radius" type="radio" id="Pioneiro Auxiliar" name="Privilégio" value="Pioneiro Auxiliar">
-                                <label for="Pioneiro Auxiliar" id="Privilegio">Pioneiro Auxiliar</label>
-                                                <br><br>
-                                <input class="margem_radius" type="radio" id="Pioneiro Regular" name="Privilégio" value="Pioneiro Regular">
-                                <label for="pioneiro Regular" id="Privilegio">Pioneiro Regular</label>
                                 <br><br>
                                 <!---------------Botão------------------------>
                                 <input name="submit" id="submit" class="botao" type="submit">
@@ -185,6 +179,19 @@
     }
 });
 
+            </script>
+        <script>
+                function alterarTipo() {
+                    var horasInput = document.getElementById("horas");
+                    var pioneiroAuxiliarCheckbox = document.getElementById("pioneiroAuxiliar");
+                    var pioneiroRegularCheckbox = document.getElementById("pioneiroRegular");
+        
+                    if (pioneiroAuxiliarCheckbox.checked || pioneiroRegularCheckbox.checked) {
+                        horasInput.type = "number";
+                    } else {
+                        horasInput.type = "text";
+                    }
+                }
             </script>
    </body>
    </html>
