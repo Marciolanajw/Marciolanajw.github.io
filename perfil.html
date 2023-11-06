@@ -2,198 +2,143 @@
 <html>
 <head>
     <title>Registro de Atividades</title>
-    <!--Estilos-->
+    <!-- Estilos -->
     <link rel="stylesheet" href="next-page.css">
     <link rel="stylesheet" href="next-page1.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-       
+        /* Adicione estilos aqui, se necessário */
     </style>
+</head>
+<body>
+    <div class="box">
+        <form action="https://api.sheetmonkey.io/form/4uSSZS4oA8Y5FTE8SpHzF2" method="post">
+            <fieldset>
+                <div class="inputBox">
+                    <b><p id="mes-atual"></p></b>
+                </div>
+                <legend><b>Fórmulário de Atividades</b></legend>
 
-   </head>
-   <body onload="">
-        <div class="box">
-            <form action="https://api.sheetmonkey.io/form/4uSSZS4oA8Y5FTE8SpHzF2" method="post">
-                <fieldset>
-                    <div class="inputBox">
-                        <b><p id="mes-atual"></p></b>
-                      </div>
-                      <legend><b>Fórmulário de Atividades</b></legend>
-
-                        <div id="profile">
-                            <div class="linha">
-                                <img id="profileImage" src="" alt="Imagem de Perfil" class="tamanho_imagem">
-                                <h2 id="profileName" class="margem"></h2>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="sumir">
-                            <label for="username">Publicador</label>
-                            <!-- O campo de input está oculto para que o usuário não possa alterar o valor. -->
-                            <input type="text" id="Publicador" name="Publicador" class="Publicador">
-                        </div>
-
-                       
-                        <div class="sumir">
-                            <label for="previousMonth">Mês</label>
-                            <!-- Campo de input para exibir o mês anterior -->
-                            <input type="text" id="previousMonth" name="Mês" class="previousMonth">
-                        </div>
-                        <h2 id="monthYear"></h2>
-                    
-                        <br><br>
-                 
-                        <!--div class="inputBox">     
-                            <input type="number" name="Publicações" id="publicacoes" class="inputUser" required>
-                            <label for="publicacoes" class="labelInput">Publicações</label>
+                <div id="profile">
+                    <div class="linha">
+                        <img id="profileImage" src="" alt="Imagem de Perfil" class="tamanho_imagem">
+                        <h2 id="profileName" class="margem"></h2>
+                    </div>
+                </div>
+                <br>
+                <div class="sumir">
+                    <label for="username">Publicador</label>
+                    <!-- O campo de input está oculto para que o usuário não possa alterar o valor. -->
+                    <input type="text" id="Publicador" name="Publicador" class="Publicador">
                 </div>
 
-                        <br><br>
+                <div class="sumir">
+                    <label for="previousMonth">Mês</label>
+                    <!-- Campo de input para exibir o mês anterior -->
+                    <input type="text" id="previousMonth" name="Mês" class="previousMonth">
+                </div>
+                <h2 id="monthYear"></h2>
 
-                        <div class="inputBox">
-                            <input type="number" name="Vídeos Mostrados" id="videosmostrados" class="inputUser" required>
-                            <label for="videosmostrados" class="labelInput">Vídeos Mostrados</label>
-                        </div>
+                <br>
+                <input type="checkbox" id="novoCheckbox" onchange="ocultarOutros()"> Marque se você participou em alguma modalidade do ministério durante o mês<br><br>
 
-                        <br><br-->
+                <input type="checkbox" id="pioneiroAuxiliar" onchange="alterarTipo()"> Pioneiro Auxiliar<br><br>
 
-                        <input type="checkbox" id="pioneiroAuxiliar" onchange="alterarTipo()"> Pioneiro Auxiliar<br><br><br>
+                <input type="checkbox" id="pioneiroRegular" onchange="alterarTipo()"> Pioneiro Regular<br><br><br>
 
-                        <input type="checkbox" id="pioneiroRegular" onchange="alterarTipo()"> Pioneiro Regular
-                    
-                        <br><br><br><br><br>
+               
+                <div class="inputBox">
+                    <input type="number" name="Horas" id="horas" class="inputUser" placeholder="Horas:">
+                    <label for="horas" class="labelInput"></label>
+                </div>
+                
 
-                        <div class="inputBox">
-                            <input type="text" name="Horas" id="horas" class="inputUser" placeholder="Se você participou digite SIM">
-                            <label for="horas" class="labelInput">Horas</label>
-                        </div>
+                <div class="inputBox">
+                    <input type="number" name="Estudos" id="estudos" class="inputUser" placeholder="Estudos:">
+                    <label for="estudos" class="labelInput"></label>
+                </div>
+
+                <div class="inputBox">
+                    <textarea name="Observacoes" id="Observacoes" class="inputUser" placeholder="Observações:" rows="4" cols="50"></textarea>
+                    <label for="Observacoes" class="labelInput"></label>
+                </div>
+                
+
+                <div class="sumir">
+                    <label for="observacoes">Observações</label>
+                    <!-- Campo de input para as observações -->
+                    <input type="text" id="observacoesInput" name="Observações" class="observacoesInput">
+                </div>
+
+                <br><br>
+                <!---------------Botão------------------------>
+                <input name="submit" id="submit" class="botao" type="submit">
+            </fieldset>
+        </form>
+    </div>
+
+    <script src="script_foto.js"></script>
+    <script src="login/login.js"></script>
+    <script src="script-obs.js"></script>
 
 
-                        <br><br>
 
-                        <div class="inputBox">
-                            <input type="number" name="Estudos" id="estudos" class="inputUser" required>
-                            <label for="estudos" class="labelInput">Estudos</label>
-                        </div>
-                        
-                        <div class="sumir">
-                            <label for="observacoes">Observações</label>
-                            <!-- Campo de input para as observações -->
-                            <input type="text" id="observacoesInput" name="Observações" class="observacoesInput">
-                        </div>
+    <script>
+        // Obtém a data atual
+        var currentDate = new Date();
 
-                        <br>
+        // Subtrai um mês da data atual
+        var previousMonth = new Date(currentDate);
+        previousMonth.setMonth(currentDate.getMonth() - 1);
 
-                                <br><br>
-                                <!---------------Botão------------------------>
-                                <input name="submit" id="submit" class="botao" type="submit">
-                </fieldset>
-            </form>
-        </div>
-            
-       
-            <script src="script_foto.js"></script>
-            <script src="login/login.js"></script>
-            <script src="script-obs.js"></script>
+        // Array de nomes de meses
+        var monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
 
-            </script>
+        // Obtém o nome do mês anterior e o ano
+        var monthName = monthNames[previousMonth.getMonth()];
+        var year = previousMonth.getFullYear();
 
-             <script>
-                // Obtém a data atual
-                var currentDate = new Date();
-        
-                // Subtrai um mês da data atual
-                var previousMonth = new Date(currentDate);
-                previousMonth.setMonth(currentDate.getMonth() - 1);
-        
-                // Array de nomes de meses
-                var monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
-        
-                // Obtém o nome do mês anterior e o ano
-                var monthName = monthNames[previousMonth.getMonth()];
-                var year = previousMonth.getFullYear();
-        
-                // Define o texto do cabeçalho com o mês e o ano
-                document.getElementById("monthYear").textContent = monthName;
-            </script>
+        // Define o texto do cabeçalho com o mês e o ano
+        document.getElementById("monthYear").textContent = monthName;
+    </script>
 
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    var meses = [
-                        'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
-                        'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
-                    ];
+    <script>
+        function ocultarOutros() {
+            var pioneiroAuxiliarCheckbox = document.getElementById("pioneiroAuxiliar");
+            var pioneiroRegularCheckbox = document.getElementById("pioneiroRegular");
+            var novoCheckbox = document.getElementById("novoCheckbox");
+            var horasInput = document.getElementById("horas");
 
-                    var dataAtual = new Date();
-                    var mesAnteriorIndex = (dataAtual.getMonth() - 1 + 12) % 12; // Cálculo para obter o índice do mês anterior
-                    var mesAnterior = meses[mesAnteriorIndex];
-
-                    // Exibir o mês anterior no elemento span
-                    var mesAnteriorSpan = document.getElementById('mes-anterior');
-                    if (mesAnteriorSpan) {
-                        mesAnteriorSpan.textContent = mesAnterior;
-                    }
-
-                });
-            </script>
-
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                var loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
-
-                if (loggedInUser) {
-                    var observacoesInput = document.getElementById("observacoesInput");
-                    observacoesInput.value = loggedInUser.observacoes;
-
-                    var profileName = document.getElementById("profileName");
-                    profileName.textContent = loggedInUser.nome;
-
-                    var publicadorInput = document.getElementById("Publicador");
-                    publicadorInput.value = loggedInUser.nome;
-                }
-            });
-
-            </script>
-
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-    var loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
-
-    if (loggedInUser) {
-        var observacoesInput = document.getElementById("observacoesInput");
-        observacoesInput.value = loggedInUser.observacoes;
-
-        var profileName = document.getElementById("profileName");
-        profileName.textContent = loggedInUser.nome;
-
-        var publicadorInput = document.getElementById("Publicador");
-        publicadorInput.value = loggedInUser.nome;
-
-        var monthYear = document.getElementById("monthYear");
-        var previousMonthInput = document.getElementById("previousMonth");
-
-        if (monthYear && previousMonthInput) {
-            previousMonthInput.value = monthYear.textContent;
+            if (novoCheckbox.checked) {
+                pioneiroAuxiliarCheckbox.style.display = "none";
+                pioneiroRegularCheckbox.style.display = "none";
+                horasInput.style.display = "none";
+            } else {
+                pioneiroAuxiliarCheckbox.style.display = "inline";
+                pioneiroRegularCheckbox.style.display = "inline";
+                horasInput.style.display = "inline";
+            }
         }
-    }
-});
+    </script>
+    <script>
+        function alterarTipo() {
+            var horasInput = document.getElementById("horas");
+            var pioneiroAuxiliarCheckbox = document.getElementById("pioneiroAuxiliar");
+            var pioneiroRegularCheckbox = document.getElementById("pioneiroRegular");
+            var novoCheckbox = document.getElementById("novoCheckbox");
+    
+            if (pioneiroAuxiliarCheckbox.checked || pioneiroRegularCheckbox.checked) {
+                horasInput.type = "number";
+                novoCheckbox.style.display = "none"; // Oculta o checkbox "Novo Checkbox"
+            } else {
+                horasInput.type = "number";
+                novoCheckbox.style.display = "inline"; // Exibe o checkbox "Novo Checkbox"
+            }
+        }
+    </script>
 
-            </script>
-        <script>
-                function alterarTipo() {
-                    var horasInput = document.getElementById("horas");
-                    var pioneiroAuxiliarCheckbox = document.getElementById("pioneiroAuxiliar");
-                    var pioneiroRegularCheckbox = document.getElementById("pioneiroRegular");
-        
-                    if (pioneiroAuxiliarCheckbox.checked || pioneiroRegularCheckbox.checked) {
-                        horasInput.type = "number";
-                    } else {
-                        horasInput.type = "text";
-                    }
-                }
-            </script>
-   </body>
-   </html>
-   
-   
+    
+    
+</body>
+</html>
