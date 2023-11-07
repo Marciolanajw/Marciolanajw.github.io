@@ -32,16 +32,14 @@
                     <input type="text" id="Publicador" name="Publicador" class="Publicador">
                 </div>
 
-               <div class="mes-atual">
+                <div class="mes-atual">
                     <p>Mês: <span id="currentMonth"></span></p>
-                </div>
-
-                <div class="sumir">
+               </div>
+               <div class="sumir">
                     <label for="currentMonthInput">Mês Atual:</label>
                     <!-- Campo de input para exibir o mês atual -->
                     <input type="text" id="currentMonthInput" name="Mês" class="currentMonthInput">
-                </div>
-
+               </div>
                 <br>
                 <input type="checkbox" id="novoCheckbox" onchange="preencherCampoBooleano()"> Marque se você participou em alguma modalidade do ministério durante o mês<br><br>
 
@@ -140,6 +138,13 @@
             }
         }
     </script>
-    
+    <script>
+        var currentDate = new Date();
+        currentDate.setMonth(currentDate.getMonth() - 1); // Define a data para o mês anterior
+        var previousMonth = currentDate.toLocaleString('default', { month: 'long' });
+        previousMonth = previousMonth.charAt(0).toUpperCase() + previousMonth.slice(1); // Capitaliza a primeira letra do mês anterior
+        document.getElementById("currentMonth").textContent = previousMonth;
+        document.getElementById("currentMonthInput").value = previousMonth; // Define o valor do campo de input
+    </script>
 </body>
 </html>
