@@ -151,22 +151,24 @@
                 { usuario: "Walter",    senha: "", nome: "Walter Ferreira de Oliveira",        imagem: "walter.jpg",      observacoes: "Grupo 5 - Cícero"},
                 { usuario: "Joana",     senha: "", nome: "Joana Pereira de Sousa",             imagem: "",                observacoes: "Grupo 5 - Cícero"}
                 
-            ];
+                ];
             
-            var inputUsername = document.getElementById("username").value;
-            var inputPassword = document.getElementById("password").value;
+                    var inputUsername = document.getElementById("username").value.trim().toLowerCase(); // Remova espaços desnecessários e converta para minúsculas
+                    var inputPassword = document.getElementById("password").value;
             
-            var loggedInUser = users.find(function(user) {
-                return user.usuario === inputUsername && user.senha === inputPassword;
-            });
+                    var loggedInUser = users.find(function(user) {
+                    // Comparação insensível a maiúsculas/minúsculas e com espaços removidos
+                    return user.usuario.trim().toLowerCase() === inputUsername && user.senha === inputPassword;
+                    });
             
-            if (loggedInUser) {
-                localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
-                window.location.href = "perfil.html";
-            } else {
-                alert("Credenciais inválidas. Tente novamente.");
+                    if (loggedInUser) {
+                    localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
+                    window.location.href = "perfil.html";
+                    } else {
+                    alert("Credenciais inválidas. Tente novamente.");
             }
         });
+
     </script>
 </body>
 </html>
